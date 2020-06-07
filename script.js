@@ -70,10 +70,10 @@ const handleKeyPress = (e) => {
 const handleLeftRightPress = (e) => {
   const currentImgIndex = images.indexOf(imageUrl);
   const lastImgIndex = images.length - 1;
-  if (e.code === "ArrowRight" && currentImgIndex < lastImgIndex) {
-    imageChange(e.code);
-  }
-  if (e.code === "ArrowLeft" && currentImgIndex > 0) {
+  if (
+    (e.code === "ArrowRight" && currentImgIndex < lastImgIndex) ||
+    (e.code === "ArrowLeft" && currentImgIndex > 0)
+  ) {
     imageChange(e.code);
   }
   modalImage.src = imageUrl;
